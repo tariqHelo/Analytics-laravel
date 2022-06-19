@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//tblleads :
+//tblinvoices :
+//tblestimate_requests
+//tblprojects :
+//tblproposals:
+//tbltasks:
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('layouts.admin');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
