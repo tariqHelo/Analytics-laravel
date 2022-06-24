@@ -155,10 +155,10 @@
               <div class="info-box">
                 <div class="info-box-content">
                   <div class="progress-group">
-                     Blleads Completed
-                    <span class="float-right"><b>{{$tblleads->Completed}}</b>/{{$tblleads->total}}</span>
+                     Blleads Completed 
+                    <span class="float-right"><b>{{$tblleads->Completed}}</b>/{{$tblleads->total ?? "0"}}</span>
                     <div class="progress" style="height:20px">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: {{$tblleads->Completed/ $tblestimate_requests->total * 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-success" role="progressbar" style="width: {{$tblleads->total == 0 ? 0 :($tblleads->Completed/ $tblleads->total)* 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
@@ -172,9 +172,9 @@
                 <div class="info-box-content">
                   <div class="progress-group">
                     Blleads Processing
-                    <span class="float-right"><b>{{$tblleads->Processing}}</b>/{{$tblleads->total}}</span>
+                    <span class="float-right"><b>{{$tblleads->Processing}}</b>/{{$tblleads->total ?? "0"}}</span>
                     <div class="progress" style="height:20px">
-                      <div class="progress-bar bg-danger" role="progressbar" style="width: {{$tblleads->Processing/ $tblleads->total * 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: {{$tblleads->total == 0 ? 0 :($tblleads->Processing/ $tblleads->total)* 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
@@ -192,9 +192,9 @@
                 <div class="info-box-content">
                   <div class="progress-group">
                       Blleads Cancelled
-                    <span class="float-right"><b>{{($tblleads->Cancelled)}}</b>/{{$tblleads->total}}</span>
+                    <span class="float-right"><b>{{($tblleads->Cancelled)}}</b>/{{$tblleads->total ?? "0"}}</span>
                     <div class="progress" style="height:20px">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: {{$tblleads->Cancelled/ $tblleads->total * 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: {{$tblleads->total == 0 ? 0 :($tblleads->Cancelled/ $tblleads->total)* 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
@@ -232,9 +232,9 @@
                 <div class="info-box-content">
                   <div class="progress-group">
                     Estimate Requests Completed
-                    <span class="float-right"><b>{{$tblestimate_requests->Completed}}</b>/{{$tblestimate_requests->total}}</span>
+                    <span class="float-right"><b>{{$tblestimate_requests->Completed}}</b>/{{$tblestimate_requests->total ?? "0"}}</span>
                     <div class="progress" style="height:20px">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: {{$tblestimate_requests->Completed/ $tblestimate_requests->total * 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-success" role="progressbar" style="width: {{$tblestimate_requests->total == 0 ? 0 :($tblestimate_requests->Completed/ $tblestimate_requests->total)* 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
@@ -248,9 +248,9 @@
                 <div class="info-box-content">
                   <div class="progress-group">
                     Estimate Requests Processing
-                    <span class="float-right"><b>{{$tblestimate_requests->Processing}}</b>/{{$tblestimate_requests->total}}</span>
+                    <span class="float-right"><b>{{$tblestimate_requests->Processing}}</b>/{{$tblestimate_requests->total ?? "0"}}</span>
                     <div class="progress" style="height:20px">
-                      <div class="progress-bar bg-danger" role="progressbar" style="width: {{$tblestimate_requests->Processing / $tblestimate_requests->total * 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: {{$tblestimate_requests->total == 0 ? 0 :($tblestimate_requests->Processing/ $tblestimate_requests->total)* 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
@@ -268,9 +268,9 @@
                 <div class="info-box-content">
                   <div class="progress-group">
                     Estimate Requests Cancelled 
-                    <span class="float-right"><b>{{$tblestimate_requests->Cancelled}}</b>/{{$tblestimate_requests->total}}</span>
+                    <span class="float-right"><b>{{$tblestimate_requests->Cancelled}}</b>/{{$tblestimate_requests->total ?? "0"}}</span>
                     <div class="progress" style="height:20px">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: {{$tblestimate_requests->Cancelled / $tblestimate_requests->total * 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: {{$tblestimate_requests->total == 0 ? 0 :($tblestimate_requests->Cancelled/ $tblestimate_requests->total)* 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
@@ -384,9 +384,9 @@
                 <div class="info-box-content">
                   <div class="progress-group">
                     Proposals Completed
-                    <span class="float-right"><b>{{$tblproposals->Completed}}</b>/{{$tblproposals->total}}</span>
+                    <span class="float-right"><b>{{$tblproposals->Completed}}</b>/{{$tblproposals->total ?? "0"}}</span>
                     <div class="progress" style="height:20px">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: {{$tblproposals->Completed / $tblproposals->total * 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-success" role="progressbar" style="width: {{$tblproposals->total == 0 ? 0 :($tblproposals->Completed/ $tblproposals->total)* 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
@@ -400,9 +400,9 @@
                 <div class="info-box-content">
                   <div class="progress-group">
                     Proposals Processing
-                    <span class="float-right"><b>{{$tblproposals->Processing}}</b>/{{$tblproposals->total}}</span>
+                    <span class="float-right"><b>{{$tblproposals->Processing}}</b>/{{$tblproposals->total ?? "0"}}</span>
                     <div class="progress" style="height:20px">
-                      <div class="progress-bar bg-danger" role="progressbar" style="width: {{$tblproposals->Processing / $tblproposals->total * 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: {{$tblproposals->total == 0 ? 0 :($tblproposals->Processing/ $tblproposals->total)* 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
@@ -422,7 +422,7 @@
                      Proposals Cancelled
                     <span class="float-right"><b>{{$tblproposals->Cancelled}}</b>/{{$tblproposals->total}}</span>
                     <div class="progress" style="height:20px">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: {{$tblproposals->Cancelled / $tblproposals->total * 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: {{$tblproposals->total == 0 ? 0 :($tblproposals->Cancelled/ $tblproposals->total)* 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
@@ -448,7 +448,7 @@
                     Tasks Completed
                     <span class="float-right"><b>{{$tbltasks->Completed}}</b>/{{$tbltasks->total}}</span>
                     <div class="progress" style="height:20px">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: {{$tbltasks->Completed / $tbltasks->total * 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-success" role="progressbar" style="width: {{$tbltasks->total == 0 ? 0 :($tbltasks->Completed/ $tbltasks->total)* 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
@@ -464,7 +464,7 @@
                     Tasks Processing
                     <span class="float-right"><b>{{$tbltasks->Processing}}</b>/{{$tbltasks->total}}</span>
                     <div class="progress" style="height:20px">
-                      <div class="progress-bar bg-danger" role="progressbar" style="width: {{$tbltasks->Processing / $tbltasks->total * 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: {{$tbltasks->total == 0 ? 0 :($tbltasks->Processing/ $tbltasks->total)* 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
@@ -484,7 +484,7 @@
                     Tasks Cancelled
                     <span class="float-right"><b>{{$tbltasks->Cancelled}}</b>/{{$tbltasks->total}}</span>
                     <div class="progress" style="height:20px">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: {{$tbltasks->Cancelled / $tbltasks->total * 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: {{$tbltasks->total == 0 ? 0 :($tbltasks->Cancelled/ $tbltasks->total)* 100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
